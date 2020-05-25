@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace OomphInc\ComposerInstallersExtender\Installers;
+namespace Overlay\OverlayInstallersExtender\Installers;
 
 use Composer\Package\PackageInterface;
 use Composer\Installer\LibraryInstaller;
@@ -22,9 +22,14 @@ class Installer extends InstallerBase
      */
     public function getInstallPath(PackageInterface $package): string
     {
-        $installer = new CustomInstaller($package, $this->composer, $this->io);
-        $path = $installer->getInstallPath($package, $package->getType());
+        //If the type contains the overlay- prefix, then use overlay installer - else use custom
+        if (strpos($package->getType(), 'overlay-') !== false) {
+            $installer = new OverlayInstaller($package, $this->composer, $this->io);
+        } else {
+            $installer = new CustomInstaller($package, $this->composer, $this->io);
+        }
 
+        $path = $installer->getInstallPath($package, $package->getType());
         return $path ?: LibraryInstaller::getInstallPath($package);
     }
 

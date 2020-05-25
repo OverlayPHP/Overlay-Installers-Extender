@@ -1,10 +1,15 @@
 {
-    "name": "oomphinc/composer-installers-extender",
-    "description": "Extend the composer/installers plugin to accept any arbitrary package type.",
-    "homepage": "http://www.oomphinc.com/",
+    "name": "overlay/overlay-installers-extender",
+    "description": "Extend the composer/installers plugin to accept Overlay Package Types",
+    "homepage": "http://www.overlay.ws",
     "type": "composer-plugin",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Warren Bird",
+            "email": "support@overlay.ws",
+            "homepage": "https://github.com/overlayphp"
+        },
         {
             "name": "Stephen Beemsterboer",
             "email": "stephen@oomphinc.com",
@@ -17,7 +22,7 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/oomphinc/composer-installers-extender/issues"
+        "issues": "https://github.com/overlayphp/overlay-installers-extender/issues"
     },
     "require": {
         "php": ">=7.1",
@@ -31,12 +36,12 @@
     },
     "autoload":{
         "psr-4": {
-            "OomphInc\\ComposerInstallersExtender\\": "src/"
+            "Overlay\\OverlayInstallersExtender\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OomphInc\\ComposerInstallerExtender\\Tests\\": "tests/src/"
+            "Overlay\\OverlayInstallerExtender\\Tests\\": "tests/src/"
         }
     },
     "scripts": {
@@ -48,6 +53,6 @@
         "sort-packages": true
     },
     "extra": {
-        "class": "OomphInc\\ComposerInstallersExtender\\Plugin"
+        "class": "Overlay\\OverlayInstallersExtender\\Plugin"
     }
 }

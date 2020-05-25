@@ -1,8 +1,7 @@
 <?php
 
 declare(strict_types = 1);
-
-namespace OomphInc\ComposerInstallersExtender\Installers;
+namespace Overlay\OverlayInstallersExtender\Installers;
 
 use Composer\Installers\BaseInstaller;
 
